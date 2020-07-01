@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Here's Some Juice...</title>
+		<link rel="shortcut icon" type="image/png" href="icon.png"></link>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>		
+	</head>
+	<body>
+	
+	<img src="images/fruit-juice.jpg" alt="Freshy Juice" width="500" height="300">
+
+	<h1>The audio autoplay attribute</h1>
+	
+	<p>Click on the play button to play some happy music cheese :</p>
+	
+	<p> Main audio 1
+	<audio controls loop>
+		<source src="audio/main_1.mp3" type="audio/mpeg">
+	  	Your browser does not support the audio element.
+	</audio>
+	</p>
+	<br>
+
+	<p> Main audio 2
+	<audio controls autoplay loop>
+		<source src="audio/main_2.mp3" type="audio/mpeg">
+	  	Your browser does not support the audio element.
+	</audio>
+	</p>
+
+    	<script src="sketch.js"></script>
+	
+	</body>
+</html>
