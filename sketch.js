@@ -2,7 +2,7 @@
 function setup(){
 	can = createCanvas(windowWidth, windowHeight);
 	can.position(0, 0);
-	can.style('z-index', -1);
+	can.style('pointer-events', 'none');
 	drops = [];
 }
 
