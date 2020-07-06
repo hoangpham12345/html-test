@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Here's Some Juice...</title>
 		<link rel="shortcut icon" type="image/png" href="icon.png"></link>
+		<link rel="stylesheet" type="text/css" href="index.css"></link>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
 	</head>
 	<body>
-	
-	<img src="images/fruit-juice.jpg" alt="Freshy Juice" width="500" height="300">
 
-	<h1>The audio autoplay attribute</h1>
-	
-	<p>Click on the play button to play some happy music cheese :</p>
-	
-	<p> Main audio 1
-	<audio controls loop>
-		<source src="audio/main_1.mp3" type="audio/mpeg">
-	  	Your browser does not support the audio element.
-	</audio>
-	</p>
-	<br>
+		<div class="bodypart">
+		<img src="images/fruit-juice.jpg" alt="Freshy Juice" width="500" height="300">
 
-	<p> Main audio 2
-	<audio controls autoplay loop>
-		<source src="audio/main_2.mp3" type="audio/mpeg">
-	  	Your browser does not support the audio element.
-	</audio>
-	</p>
+		<h1>The audio autoplay attribute</h1>
 
-    	<script src="sketch.js"></script>
-	
+		<p>Click on the play button to play some happy music cheese :</p>
+
+		<p> Main audio 1
+			<audio controls loop>
+				<source src="audio/main_1.mp3" type="audio/mpeg">
+	  		Your browser does not support the audio element.
+			</audio>
+		</p>
+		<br>
+
+		<p> Main audio 2
+			<audio controls autoplay loop>
+				<source src="audio/main_2.mp3" type="audio/mpeg">
+	  		Your browser does not support the audio element.
+			</audio>
+		</p>
+		</div>
+		<div class="juice">
+    		<script src="sketch.js"></script>
+		</div>
 	</body>
 </html>
