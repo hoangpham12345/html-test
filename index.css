@@ -1,0 +1,61 @@
+body{
+  background-color: AliceBlue;
+  font-family: sans-serif;
+}
+
+header{
+  background-color: SkyBlue;
+}
+
+header table{
+  width: 100%;
+}
+
+header p{
+  font-size: 80px;
+  font-family: cursive;
+  font-style: oblique;
+  padding: 0px;
+  margin: auto;
+}
+
+nav {
+    background-color: #efe5d0;
+	margin: 10px 10px 0px 10px;
+}
+nav ul {
+	margin: 0px;
+	list-style-type: none;
+	padding: 5px 0px 5px 0px;
+}
+nav ul li {
+	display: inline;
+	padding: 5px 10px 5px 10px;
+}
+nav ul li a:link, nav ul li a:visited {
+	color: #954b4b;
+	border-bottom: none;
+	font-weight: bold;
+}
+
+footer{
+  background-color: Olive;
+  color: white;
+  text-align: center;
+  font-size: small;
+}
+table#footer-table{
+  width: 100%;
+  vertical-align: top;
+}
+table#footer-table td{
+  width: 50%;
+}
+table table#inner-footer-table td{
+  width: 20%;
+}
+
+table table#inner-footer-table a{
+  color: white;
+  font-
+}

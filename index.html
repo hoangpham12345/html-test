@@ -9,31 +9,47 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
 	</head>
 	<body>
+		<script src="sketch.js"></script>
+		<header id="top">
+			<table>
+				<tr>
+					<td><img src="images/power_of_visualization.jpg" alt="The power of Visualization"></td>
+					<td><p>Welcome to our website</p>
+				</tr>
+			</table>
+			<nav>
+				<ul>
+  				<li><a href="index.html">Home</a></li>
+  				<li><a href="news.html">News</a></li>
+  				<li><a href="contact.html">Contact</a></li>
+  				<li><a href="about.html">About</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+		<h1>Well, there is nothing to show here</h1>
 
-		<div class="bodypart">
-		<img src="images/fruit-juice.jpg" alt="Freshy Juice" width="500" height="300">
+		<p>Just click on the play button to play our cheese video:</p>
+		<video width="320" height="240" controls src ="video/test.mp4" poster="images/fruit-juice.jpg"></video>
 
-		<h1>The audio autoplay attribute</h1>
-
-		<p>Click on the play button to play some happy music cheese :</p>
-
-		<p> Main audio 1
-			<audio controls loop>
-				<source src="audio/main_1.mp3" type="audio/mpeg">
-	  		Your browser does not support the audio element.
-			</audio>
-		</p>
-		<br>
-
-		<p> Main audio 2
-			<audio controls autoplay loop>
-				<source src="audio/main_2.mp3" type="audio/mpeg">
-	  		Your browser does not support the audio element.
-			</audio>
-		</p>
-		</div>
-		<div class="juice">
-    		<script src="sketch.js"></script>
-		</div>
+		<footer>
+			<table id="footer-table">
+			<tr>
+				<td>
+					<p>Copyright &copy 2020 by Visualization group</p>
+					<p>This project is made for educational purposes only</p>
+				</td>
+				<td>
+					<table id="inner-footer-table">
+					<tr>
+						<td><p>Main theme music:</p>
+						<td><audio id="player" controls autoplay loop><source src="audio/main_2.mp3"></audio></td>
+						<td><a href="index.html#top">Back to top</a>
+					<tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</footer>
 	</body>
 </html>
