@@ -4,11 +4,25 @@ function setup(){
 	can.position(0, 0);
 	can.style('pointer-events', 'none');
 	drops = [];
+	start = false;
+	
+	colors = [
+		color(255, 69, 0),
+		color(255, 69, 155),
+		color(255, 0, 0),
+		color(255, 255, 0),
+		color(0, 255, 69),
+		color(127, 0, 255)
+	];
+	
+	currentColor = random(colors);
 }
 
 function draw(){
+	if(!start)
+		return;
 	clear();
-	drops.push(new Drop(mouseX, mouseY, 5));
+	drops.push(new Drop(mouseX, mouseY, 5, currentColor));
 	
 	for(let i = drops.length-1; i>=0; i--){
 		drops[i].update();
@@ -21,16 +35,22 @@ function draw(){
 }
 
 function mousePressed(){
+	currentColor = random(colors);
 	for(let i = 0; i<40; i++)
-		drops.push(new Drop(mouseX, mouseY, 40));
+		drops.push(new Drop(mouseX, mouseY, 40, currentColor));
+}
+
+function mouseMoved(){
+	start = true;
 }
 
 class Drop{
 	
-	constructor(x, y, a){
+	constructor(x, y, a, col){
+		this.col = col;
 		this.x = x + random(-a, a);
 		this.y = y + random(-a, a);
-		this.d = random(5, 20);
+		this.d = random(10, 30);
 		this.vx = (this.x - x) * 0.04;
 		this.vy = (this.y - y) * 0.04;
 		this.dead = false;
@@ -49,7 +69,7 @@ class Drop{
 	}
 	
 	show(){
-		fill(255, 69, 0);
+		fill(this.col);
 		noStroke();
 		ellipse(this.x, this.y, this.d, this.d * 1.2);
 	}

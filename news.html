@@ -5,46 +5,21 @@
 		<title>Here's Some Juice...</title>
 		<link rel="shortcut icon" type="image/png" href="icon.png"></link>
 		<link rel="stylesheet" type="text/css" href="index.css"></link>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>$(function(){$("#visual-header").load("header.html")});</script>
+		<script>$(function(){$("#visual-footer").load("footer.html")});</script>
   </head>
   <body>
     <script src="sketch.js"></script>
     <header id="top">
-      <table>
-        <tr>
-          <td><img src="images/power_of_visualization.jpg" alt="The power of Visualization"></td>
-          <td><p>Welcome to our website</p>
-        </tr>
-      </table>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="news.html">News</a></li>
-  				<li><a href="contact.html">Contact</a></li>
-  				<li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
+		<div id="visual-header"></div>
     </header>
     <section>
 		<h1>Well, there is nothing to show here</h1>
 	</section>
 		<footer>
-			<table id="footer-table">
-			<tr>
-				<td>
-					<p>Copyright &copy 2020 by Visualization group</p>
-					<p>This project is made for educational purposes only</p>
-				</td>
-				<td>
-					<table id="inner-footer-table">
-					<tr>
-						<td><p>Main theme music:</p>
-						<td><audio id="player" controls autoplay loop><source src="audio/main_1.mp3"></audio></td>
-						<td><a href="news.html#top">Back to top</a>
-					<tr>
-					</table>
-				</td>
-			</tr>
-			</table>
+			<div id="visual-footer"></div>
 		</footer>
 	</body>
 </html>
