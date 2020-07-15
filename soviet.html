@@ -1,0 +1,22 @@
+<p>Or hover the mouse on the below button to experience the epic cover of Soviet Anthem:</p>
+<audio id="ussr" src="audio/ussr.mp3" preload="metadata" type="audio/mpeg">
+	Your browser does not support the audio element.
+</audio>
+<a class="USSRBTN_OFF" id="ussr-btn">SOVIET</a>
+<script>
+	var ussr = document.getElementById('ussr');
+	var ussrBtn = document.getElementById('ussr-btn');
+	ussrBtn.addEventListener('mouseenter', function(){
+		playPromise = ussr.play();
+		var allow = true;
+		playPromise.then(_ => {
+			ussr.playbackRate = 2.0;
+			ussrBtn.className = "USSRBTN_ON";
+		}).catch(error => {
+		});
+	});
+	ussrBtn.addEventListener('mouseout', function(){
+		ussr.pause();
+		ussrBtn.className = "USSRBTN_OFF";
+	});
+</script>

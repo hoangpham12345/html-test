@@ -59,3 +59,25 @@ table table#inner-footer-table a{
   color: white;
   font-
 }
+
+.USSRBTN_ON {
+   display:inline-block;
+   padding:30px;
+   background: #fc0303;
+   border-radius: 4px;
+   color: #000;
+   font-size:50px;
+   text-transform:uppercase;
+   line-height:20px;
+}
+
+.USSRBTN_OFF {
+   display:inline-block;
+   padding:30px;
+   background: #fff;
+   border-radius: 4px;
+   color: #000;
+   font-size:30px;
+   text-transform:uppercase;
+   line-height:20px;
+}
