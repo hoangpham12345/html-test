@@ -1,3 +1,29 @@
+<script>
+var position = 0;
+var playlist;
+var audio;
+
+window.onload = function() {
+  playlist = ["audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
+  audio = document.getElementById("audio");
+  audio.addEventListener("ended", nextaudio, false);
+
+  audio.src = playlist[position];
+  audio.load();
+  audio.play()
+}
+
+function nextaudio() {
+  position++;
+  if (position >= playlist.length) {
+    position = 0;
+  }
+  audio.src = playlist[position];
+  audio.load();
+  audio.play();
+}
+</script>
+
 <table id="footer-table">
 <tr>
 	<td>
@@ -8,7 +34,7 @@
 		<table id="inner-footer-table">
 		<tr>
 			<td><p>Main theme music:</p>
-			<td><audio id="player" controls autoplay loop><source src="audio/main_1.mp3"></audio></td>
+			<td><audio id="audio" controls autoplay></audio></td>
 			<td><a href="about.html#top">Back to top</a>
 		<tr>
 		</table>
