@@ -3,15 +3,15 @@ var position = 0;
 var playlist;
 var audio;
 
-window.onload = function() {
+$( document ).ready(function() {
   playlist = ["audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
   audio = document.getElementById("audio");
   audio.addEventListener("ended", nextaudio, false);
-
+	audio.preload = "metadata";
   audio.src = playlist[position];
   audio.load();
   audio.play()
-}
+});
 
 function nextaudio() {
   position++;
