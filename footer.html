@@ -5,11 +5,7 @@ var audio;
 var pageUrl;
 
 $( document ).ready(function() {
-<<<<<<< HEAD
-  playlist = ["audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
-=======
   playlist = ["audio/250ms-silence.mp3", "audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
->>>>>>> 0ed3972fbe7cd7f872fd628baead7c1e1db68751
   audio = document.getElementById("audio");
   audio.addEventListener("ended", nextaudio, false);
   audio.src = playlist[position];
