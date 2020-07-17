@@ -5,13 +5,9 @@ var audio;
 var pageUrl;
 
 $( document ).ready(function() {
-  audio.src = "audio/250ms-silence.mp3"
-  audio.load();
-  audio.play();
   playlist = ["audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
   audio = document.getElementById("audio");
   audio.addEventListener("ended", nextaudio, false);
-	// audio.preload = "auto";
   audio.src = playlist[position];
   audio.load();
   audio.play();
@@ -32,6 +28,9 @@ function nextaudio() {
 </script>
 
 <table id="footer-table">
+  <!-- 250ms-silence.mp3 will trigger the autoplay in Chrome and then it will play the audio in the playlist. -->
+  <audio src="audio/250ms-silence.mp3" autoplay>
+  </audio>
 <tr>
 	<td>
 		<p>Copyright &copy 2020 by Visualization group</p>
