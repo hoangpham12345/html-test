@@ -1,8 +1,9 @@
 
 function setup(){
-	can = createCanvas(windowWidth, windowHeight);
+	can = createCanvas(windowWidth, windowHeight - 1);
 	can.position(0, 0);
 	can.style('pointer-events', 'none');
+	can.style('position', 'fixed');
 	drops = [];
 	start = false;
 	
@@ -18,7 +19,11 @@ function setup(){
 	currentColor = random(colors);
 }
 
-function draw(){
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+
+function draw(){	
 	if(!start)
 		return;
 	clear();
