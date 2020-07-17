@@ -2,10 +2,15 @@
 var position = 0;
 var playlist;
 var audio;
+var trigger;
 var pageUrl;
 
 $( document ).ready(function() {
-  playlist = ["audio/250ms-silence.mp3", "audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
+  trigger = document.getElementById("trigger");
+  trigger.src = "audio/250ms-silence.mp3"
+  trigger.load();
+  trigger.play();
+  playlist = ["audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
   audio = document.getElementById("audio");
   audio.addEventListener("ended", nextaudio, false);
   audio.src = playlist[position];
@@ -29,7 +34,7 @@ function nextaudio() {
 
 <table id="footer-table">
   <!-- 250ms-silence.mp3 will trigger the autoplay in Chrome and then it will play the audio in the playlist. -->
-  <audio src="audio/250ms-silence.mp3" autoplay>
+  <audio id="trigger" autoplay>
   </audio>
 <tr>
 	<td>
