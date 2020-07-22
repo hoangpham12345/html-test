@@ -2,7 +2,6 @@
 var position = 0;
 var playlist;
 var audio;
-var pageUrl;
 
 $( document ).ready(function() {
   playlist = ["audio/main_1.mp3", "audio/main_2.mp3", "audio/main_3.mp3", "audio/main_4.mp3"];
@@ -11,9 +10,6 @@ $( document ).ready(function() {
   audio.src = playlist[position];
   audio.load();
   audio.play();
-	pageUrl = window.location.pathname;
-	var a = document.getElementById("BTT");
-	a.href = pageUrl + "#top";
 });
 
 function nextaudio() {
@@ -38,7 +34,7 @@ function nextaudio() {
 		<tr>
 			<td><p>Main theme music:</p>
 			<td><audio id="audio" controls></audio></td>
-			<td><a id="BTT">Back to top</a>
+			<td><a href="#top">Back to top</a>
 		<tr>
 		</table>
 	</td>
