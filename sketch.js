@@ -1,3 +1,9 @@
+var juiceSwitch;
+
+$( document ).ready(function() {
+	juiceSwitch = document.getElementById("headerTable");
+	console.log(juiceSwitch);
+});
 
 function setup(){
 	can = createCanvas(windowWidth, windowHeight - 1);
@@ -6,7 +12,7 @@ function setup(){
 	can.style('position', 'fixed');
 	drops = [];
 	start = false;
-	
+
 	colors = [
 		color(255, 69, 0),
 		color(255, 69, 155),
@@ -15,7 +21,7 @@ function setup(){
 		color(0, 255, 69),
 		color(127, 0, 255)
 	];
-	
+
 	currentColor = random(colors);
 }
 
@@ -23,18 +29,18 @@ function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
 }
 
-function draw(){	
+function draw(){
 	if(!start)
 		return;
 	clear();
 	drops.push(new Drop(mouseX, mouseY, 5, currentColor));
-	
+
 	for(let i = drops.length-1; i>=0; i--){
 		drops[i].update();
 		if(drops[i].dead)
 			drops.splice(i, 1);
 	}
-	
+
 	for(let d of drops)
 		d.show();
 }
@@ -50,7 +56,7 @@ function mouseMoved(){
 }
 
 class Drop{
-	
+
 	constructor(x, y, a, col){
 		this.col = col;
 		this.x = x + random(-a, a);
@@ -60,7 +66,7 @@ class Drop{
 		this.vy = (this.y - y) * 0.04;
 		this.dead = false;
 	}
-	
+
 	update(){
 		this.vy += 0.3;
 		this.x += this.vx;
@@ -72,12 +78,11 @@ class Drop{
 			this.vy = 0.1;
 		}
 	}
-	
+
 	show(){
 		fill(this.col);
 		noStroke();
 		ellipse(this.x, this.y, this.d, this.d * 1.2);
 	}
-	
-}
 
+}

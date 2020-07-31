@@ -1,10 +1,14 @@
+@import url("toggleSwitch.css");
+
 body{
   background-color: AliceBlue;
   font-family: sans-serif;
 }
 
 header{
-  background-color: SkyBlue;
+  overflow: auto;
+  padding-top: 20px;
+  background-color: #87CEEB;
 }
 
 header table{
@@ -20,7 +24,8 @@ header p{
 }
 
 nav {
-    background-color: #efe5d0;
+  overflow: auto;
+  background-color: #efe5d0;
 	margin: 10px 10px 0px 10px;
 }
 nav ul {
