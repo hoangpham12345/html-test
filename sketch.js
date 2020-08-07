@@ -1,9 +1,6 @@
-var juiceSwitch;
-
-$( document ).ready(function() {
-	juiceSwitch = document.getElementById("headerTable");
-	console.log(juiceSwitch);
-});
+function isActive(){
+	return document.getElementById("juiceCheckBox").checked;
+}
 
 function setup(){
 	can = createCanvas(windowWidth, windowHeight - 1);
@@ -30,10 +27,12 @@ function windowResized() {
 }
 
 function draw(){
+	clear();
 	if(!start)
 		return;
-	clear();
-	drops.push(new Drop(mouseX, mouseY, 5, currentColor));
+
+	if(isActive())
+		drops.push(new Drop(mouseX, mouseY, 5, currentColor));
 
 	for(let i = drops.length-1; i>=0; i--){
 		drops[i].update();
@@ -46,6 +45,8 @@ function draw(){
 }
 
 function mousePressed(){
+	if(!isActive())
+		return;
 	currentColor = random(colors);
 	for(let i = 0; i<40; i++)
 		drops.push(new Drop(mouseX, mouseY, 40, currentColor));
