@@ -1,12 +1,14 @@
 var typefunEngine;
 var typefunBoxes;
 var typefunWalls;
+var typefunUsedCharacters;
 
 window.onload = typefunSetup;
 
 function typefunSetup() {
   typefunBoxes = [];
   typefunWalls = [];
+  typefunUsedCharacters = new Map();
   var canvas = document.getElementById('typefunjuice');
   canvas.setAttribute("tabindex", 0);
   canvas.addEventListener("keydown", typefunKeyDown);
@@ -86,10 +88,20 @@ function TypefunWall (x, y, w, h) {
 function TypefunBox (x, y, letter) {
   this.letter = letter;
   this.font = '40px serif';
-  measure = measureTextHeight(this.letter, this.font);
-  this.h = measure.height;
-  this.offset = measure.offset;
-  this.w = getTextWidth(this.letter, this.font);
+
+  if (typefunUsedCharacters.has(letter)) {
+    shape = typefunUsedCharacters[letter];
+    this.h = shape.height;
+    this.offset = shape.offset;
+    this.w = shape.width;
+  } else {
+    measure = measureTextHeight(this.letter, this.font);
+    this.h = measure.height;
+    this.offset = measure.offset;
+    this.w = getTextWidth(this.letter, this.font);
+    typefunUsedCharacters[letter] = {height: this.h, offset: this.offset, width: this.width};
+  }
+
   this.body = Matter.Bodies.rectangle(x, y, this.w, this.h);
   Matter.World.add(typefunEngine.world, this.body);
   this.show = function (context) {
