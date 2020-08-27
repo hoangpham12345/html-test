@@ -86,3 +86,7 @@ table table#inner-footer-table a{
    text-transform:uppercase;
    line-height:20px;
 }
+
+canvas {
+  border: 2px solid darkcyan
+}

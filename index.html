@@ -10,20 +10,24 @@
 		<script>$(function(){$("#visual-header").load("header.html")});</script>
 		<script>$(function(){$("#visual-footer").load("footer.html")});</script>
 		<script>$(function(){$("#ussr-feature").load("soviet.html")});</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.js" integrity="sha512-gYH92QFYJSMUZ5sOAtkAyyShHFf8cipWjMHVWD9f4244kx3xeSn7cUcep4UxaHCKwTKU/Nzq5Lk0EkbuQGkeSg==" crossorigin="anonymous"></script>
+		<script src="scripts/typefunjuice.js"></script>
 	</head>
 	<body>
-		<script src="sketch.js"></script>
+		<script src="scripts/sketch.js"></script>
 		<header id="top">
 			<div id="visual-header"></div>
 		</header>
+		<div id="typejuicesection">
+			<h1>Type, it's fun</h1>
+			<canvas id="typefunjuice" width="800px" height="600px"></canvas>
+			<br>
+			<button id="typefunclearbtn">Clear</button>
+		</div>
 		<section>
-		<h1>Well, there is nothing to show here</h1>
-
 		<p>Just click on the play button to play our cheesy video:</p>
 		<video width="320" height="240" controls preload="none" src ="video/test.mp4" poster="images/fruit-juice.jpg"></video>
-
 		<div id="ussr-feature"></div>
-
 		</section>
 		<footer>
 			<div id="visual-footer"></div>
